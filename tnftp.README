@@ -17,6 +17,7 @@ Runtime requirements:
   libncurses10
 
 Build requirements:
+  quilt
   libncurses-devel
 
 Canonical homepage:
