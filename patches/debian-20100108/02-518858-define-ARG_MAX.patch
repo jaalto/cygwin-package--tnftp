@@ -1,0 +1,38 @@
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=518858
+
+linux/limits.h defines an ARG_MAX
+however the various headers that include linux/limits.h explicitly state 
+that the version from the linux kernel headers is wrong and explicitly 
+undefine it.
+
+/usr/include/bits/xopen_lim.h states:
+
+  "Please note only the values which are not greater than the minimum
+  stated in the standard document are listed.  The `sysconf' functions
+  should be used to obtain the actual value."
+
+and
+
+  "/* We do not provide fixed values for
+
+  ARG_MAX        Maximum length of argument to the `exec' function
+  including environment data."
+
+I took this as a hint, read the sysconf manpage and replaced "ARG_MAX" 
+with "sysconf(_SC_ARG_MAX)" in libnetbsd/glob.c .
+
+peter green <plugwash@p10link.net>  Sun, 05 Apr 2009 04:13:29 +0100
+
+--- a/libnetbsd/glob.c	2010-01-05 20:08:29.000000000 +1100
++++ b/libnetbsd/glob.c	2010-01-27 15:49:23.000000000 +1100
+@@ -61,6 +61,10 @@
+ #define ARG_MAX sysconf(_SC_ARG_MAX)
+ #endif
+ 
++#ifndef ARG_MAX
++#define	ARG_MAX		(sysconf(_SC_ARG_MAX))
++#endif
++
+ #undef	TILDE			/* XXX: AIX 4.1.5 has this in <sys/ioctl.h> */
+ 
+ #define	DOLLAR		'$'

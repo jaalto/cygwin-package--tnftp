@@ -1,0 +1,12 @@
+sdesc: "Enhanced ftp client"
+ldesc: "This is the por' of the NetBSD ftp client. The enhancements over the
+standard ftp client in 4.4BSD include: command-line editing within
+ftp, command-line fetching of URLS, including support for proxies and
+auhentication, context sensitive command and filename completion,
+dynamic progress bar, IPv6 support (from the WIDE project),
+modification time preservation, paging of local and remote files, and
+of directory listings, passive mode support, with fallback to active
+mode, TIS Firewall Toolkit gate ftp proxy support, transfer-rate
+throttling."
+category: Net
+requires: libncurses10
