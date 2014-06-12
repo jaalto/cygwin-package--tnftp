@@ -15,10 +15,11 @@ throttling.
 
 Runtime requirements:
   libncursesw10
+  libopenssl100
 
 Build requirements:
-  quilt
   libncursesw-devel
+  openssl-devel
 
 Canonical homepage:
   http://freecode.com/projects/tnftp
@@ -65,6 +66,9 @@ Files included in the binary distribution:
 ------------------------------------------
 
 Port Notes:
+
+----- version 20130505-1 -----
+- New upstream release 2014-06-12 Jari Aalto
 
 ----- version 20100108-2 -----
 - New release 2014-06-12 Jari Aalto

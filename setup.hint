@@ -9,4 +9,4 @@ of directory listings, passive mode support, with fallback to active
 mode, TIS Firewall Toolkit gate ftp proxy support, transfer-rate
 throttling."
 category: Net
-requires: libncursesw10
+requires: libncursesw10 libopenssl100
