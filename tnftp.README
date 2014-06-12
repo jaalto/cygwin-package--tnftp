@@ -14,11 +14,11 @@ mode, TIS Firewall Toolkit gate ftp proxy support, transfer-rate
 throttling.
 
 Runtime requirements:
-  libncurses10
+  libncursesw10
 
 Build requirements:
   quilt
-  libncurses-devel
+  libncursesw-devel
 
 Canonical homepage:
   http://freecode.com/projects/tnftp
