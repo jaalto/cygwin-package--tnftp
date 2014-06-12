@@ -1,2 +1,2 @@
 tag1: tnftp
-  http://packages.debian.org/unstable/tnftp pregexp:orig.tar.gz file:tnftp_20100108.orig.tar.bz2 new: x:
+  http://packages.debian.org/unstable/tnftp pregexp:orig.tar.bz2 file:tnftp_20100108.orig.tar.bz2 new: x:
